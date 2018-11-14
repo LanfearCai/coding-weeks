@@ -252,7 +252,7 @@ Allez dans votre navigateur et entrez l'adresse `http://127.0.0.1:8000/`. Vous d
 >
 > Essayez alors avec la commande `python3 manage.py runserver`. Si une autre erreur vous indique qu'il ne trouve pas django, utilisez `pip3 install django`
 
-> Si vous avez une erreur avec le module `debug_toolbar` et que vous avez installé python avec Anaconda, c'est pas de chance. Essayez quand même d'installer le module via `pip install debug_toolbar`. Si cela ne marche pas, il faudra [installer python nativement](https://www.python.org/) (en veillant à changer le `PATH` dans les variables d'environnements).
+> Si vous avez une erreur avec le module `debug_toolbar` et que vous avez installé python avec Anaconda, c'est pas de chance. Essayez quand même d'installer le module via `pip install debug_toolbar`. Si cela ne marche pas, venez me voir d'abord, il faudra peut-être [installer python nativement](https://www.python.org/) (en veillant à changer le `PATH` dans les variables d'environnements).
 
 # Et maintenant la suite...
 
