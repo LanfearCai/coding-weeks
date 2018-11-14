@@ -139,7 +139,7 @@ Et maintenant clonez le dépôt dans votre machine (ne le faites pas dans un dos
 
 Un nouveau dossier devrait apparaître avec votre code inclus dedans.
 
-> Si vous obtenez l'erreur `Couldn't find ref master`, allez sur le Gitlab (dans le navigateur web) et créez un fichier random.
+> Si vous obtenez l'erreur `Couldn't find ref remote master`, allez sur le Gitlab (dans le navigateur web) et créez un fichier random.
 
 > Si vous obtenez une erreur de certificat (qui sert à crypter vos échanges entre votre ordinateur et Gitlab), vous avez **deux solutions possibles** :
 >
