@@ -108,7 +108,7 @@ Allez sur Gitlab et créez un dépôt si ce n'est pas déjà fait. Le depôt est
 ![./gitlab1.jpg](./gitlab-1.jpg)
 ![./gitlab2.jpg](./gitlab-2.jpg)
 
-Vous allez maintenant ajouter votre binôme et votre enseignant comme collaborateur de votre dépôt. Pour cela, allez sur votre depôt GitLab et choisissez le menu Settings | Members dans la fenêtre de gauche. Ajouter votre binôme et votre enseignant comme collaborateur. Votre binôme sera Developer et votre enseignant sera Reporter.
+Vous allez maintenant ajouter votre binôme et votre enseignant comme collaborateur de votre dépôt. Pour cela, allez sur votre depôt GitLab et choisissez le menu Settings | Members dans la fenêtre de gauche. Ajouter votre binôme et votre enseignant comme collaborateur. Votre binôme sera *Maintainer* et votre enseignant sera Reporter.
 
 ### Consignes pour les personnes A et B
 
