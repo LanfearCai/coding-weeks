@@ -47,6 +47,8 @@ Python 3.6.2
 > Si vous obtenez le message `command not found`, c'est que, soit python n'est pas installé, soit l'ordinateur ne sait pas où se situe l'exécutable python. Il va falloir lui indiquer en modifiant ce qu'on appelle le `PATH`. Le `PATH` est une liste de répertoires (=dossiers) où votre ordinateur va regarder s'il trouve l'exécutable python.
 >
 > Vous devez trouver par vous-même où se situe votre exécutable python. Sous Windows, si vous avez installé python depuis [le site officiel](https://www.python.org/downloads/), le nom du dossier hôte s'appelle probablement `C:\Program Files\Python37` (ici la version est 3.7). Sous Mac, le dossier s'appelle probablement `/Library/Frameworks/Python.framework/Versions/3.6/bin` (Pour trouver le numéro de version, exécutez la commande `ls /Library/Frameworks/Python.framework/Versions`).
+>
+> Attention pour le chemin du répertoire sur Windows : si le chemin ne fonctionne pas (vous avez toujours le `command not found`), vérifiez que vous avez utilisé le nom `Program Files` et pas `Programmes`.
 > 
 > Certains ont téléchargé python via Anaconda (bad luck), il faudra chercher dans votre dossier anaconda où l'exécutable se trouve (quelques pistes : `bin`, `lib`)
 >
