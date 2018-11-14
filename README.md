@@ -24,6 +24,8 @@ Concernant la base de données, nous utiliserons SQLite et non plus PostgreSQL c
 
 *Django* est un framework backend utilisé pour créer des applications web.
 
+> Différence entre les chemins linux/mac et les chemins windows : les premiers utilisent le slash "/" et les derniers utilisent les backslashs "\\".
+
 ## Installation de python globalement
 
 La première étape est de vérifier que python (et pip) sont déjà installés globallement, c'est-à-dire que vous pouvez y accéder depuis votre terminal.
@@ -81,7 +83,7 @@ Vérifiez également que `pip` est bien installé (fourni automatiquement avec p
 pip --version
 ```
 
-Si vous obtenez `command not found`, veuillez suivre les étapes détaillées ci-dessus en trouvant le dossier hôte de `pip.exe` (ou `pip`). Généralement, sous Windows, ce dossier s'intitule `Scripts` et se situe dans le dossier contenant l'exécutable python.
+Si vous obtenez `command not found`, veuillez suivre les étapes détaillées ci-dessus en trouvant le dossier hôte de `pip.exe` (ou `pip`). Généralement, Sous Windows, il s'agit généralement de `C:\Program Files\Python37\Scripts`.
 
 ## Installation de votre éditeur de code
 
@@ -137,15 +139,34 @@ Et maintenant clonez le dépôt dans votre machine (ne le faites pas dans un dos
 
 Un nouveau dossier devrait apparaître avec votre code inclus dedans.
 
-> Si vous obtenez une erreur de certificat (qui sert à crypter vos échanges entre votre ordinateur et Gitlab), vous avez deux solutions :
+> Si vous obtenez l'erreur `Couldn't find ref master`, allez sur le Gitlab (dans le navigateur web) et créez un fichier random.
+
+> Si vous obtenez une erreur de certificat (qui sert à crypter vos échanges entre votre ordinateur et Gitlab), vous avez **deux solutions possibles** :
 >
-> Soit vous désactivez SSL avec la commande `git config http.sslVerify false` (à exécuter à la racine de votre projet). Quelqu'un peut-il venir me confirmer que cela fonctionne ?
+> **Solution 1: désactiver SSL**
 >
-> Soit vous créez une clé ssh.
+> A la place d'utiliser la commande `git clone`, utilisez ces commandes :
+>
+> ```sh
+> mkdir saclaylocal # attention, aucun dossier "saclaylocal" ne doit déjà exister
+> cd saclaylocal
+> git init
+> git remote add origin ladresse_du_depot_qui_commence_par_https
+> git config http.sslVerify false
+> git pull origin master # cela peut prendre un peu de temps
+> ```
+>
+> **Solutin 2: créer une paire de clés SSH (une privée et une publique)**
 >
 > ![ssh-key.jpg](ssh-key.jpg)
 >
-> Vous devrez ensuite ajouter votre clé dans le rectangle ci-dessus.
+> Lorsque vous générez la clé, laissez tous les champs vides. Pressez juste "Entrée" à chaque fois.
+>
+> Vous pouvez ensuite afficher votre clé publique via (attention sur Windows, utilisez le Git bash ou le PowerShell):
+> ```sh
+> cat ~/.ssh/id_rsa.pub
+> ```
+> Copiez-la ensuite dans le grand rectangle.
 
 Vous pouvez maintenant faire vos commits et "pusher" vos versions sur Gitlab.
 
@@ -184,6 +205,12 @@ Vous pouvez maintenant installer Django.
 pip install django
 ```
 
+> Si vous obtenez l'erreur suivante, relancez votre terminal en mode administrateur (click droit sur l'icône du terminal > choisir "en tant qu'administrateur").
+> ```
+> Could not install packages due to an EnvironmentError: [WinError 5] Accès refusé: 'c:\\program files\\python37\\Lib\\site-packages\\pytz'
+Consider using the `--user` option or check the permissions.
+> ```
+
 ## Création de l'application django
 
 Toujours dans le terminal de VSCode (ou dans un terminal si vous avez opté pour ce choix), créez votre projet Django :
@@ -213,6 +240,19 @@ Starting development server at http://127.0.0.1:8000/
 ```
 
 Allez dans votre navigateur et entrez l'adresse `http://127.0.0.1:8000/`. Vous devriez voir une petite fusée :rocket: apparaître.
+
+> Si vous obtenez l'erreur suivante, c'est que vous utilisez une version 2 de python et non la version 3
+>
+> ```
+>  File "manage.py", line 14
+>    ) from exc
+>         ^
+> SyntaxError: invalid syntax
+> ```
+>
+> Essayez alors avec la commande `python3 manage.py runserver`. Si une autre erreur vous indique qu'il ne trouve pas django, utilisez `pip3 install django`
+
+> Si vous avez une erreur avec le module `debug_toolbar` et que vous avez installé python avec Anaconda, c'est pas de chance. Essayez quand même d'installer le module via `pip install debug_toolbar`. Si cela ne marche pas, il faudra [installer python nativement](https://www.python.org/) (en veillant à changer le `PATH` dans les variables d'environnements).
 
 # Et maintenant la suite...
 
